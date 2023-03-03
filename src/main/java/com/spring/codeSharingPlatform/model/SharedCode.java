@@ -91,7 +91,4 @@ public class SharedCode {
     public Long getTimeLeft(){
         return this.allowedViewTime - getSecondsPassedSinceCreation();
     }
-
-
-
 }
