@@ -19,7 +19,7 @@ Back-end development · Unit Testing · Java · Algorithms · OOP · Relational 
 This platform allows programmers to share code without it being public. Each piece of code will have a limited number of views (that is, how many times that piece of code can be seen) and a limit for the time it can be seen. After a certain period of time, the code will expire and will be deleted from the database.
 
 ## Features
-As a user, I can:
+As an user, I can:
 -	add shared code
 -	view shared code
 -	view the latest five public shared codes
@@ -86,55 +86,11 @@ Postman example:
 
 ![App Screenshot](https://i.imgur.com/dO6kwju.png)
 
-## API Authentication and Authorization
 
-There are only two requests which don't require authorization headers.
 
-#### Authenticate (login)
 
-```http
-  POST /authenticate
-```
 
-| Parameter | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `body` | `json` | **Required**. The properties of user to authenticate  |
 
-Request body example:
-
-```json
-{
-  "password": "string",
-  "username": "string"
-}
-```  
-
-#### Register
-
-```http
-  POST /authenticate
-```
-
-| Parameter | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `body` | `json` | **Required**. The properties of user to register  |
-
-Request body example:
-
-```json
-{
-  "email": "string",
-  "password": "string",
-  "username": "string"
-}
-```  
-After running the authenticate request, the client will obtain an access token that will be used in all subsequent request in order to authenticate the user and to authorize the user based on its role.
-
-This is an example of what should be included in the request header:
-
-```http
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyIiwiZXhwIjoxNjcxMTQzMzEyfQ.dxIzsD9Bm8y_kw3MOoZ2JXIKOg--uZaA5XNtBLdGYc4Ps3nlzBFDwBJi0bEeHlCggonZ6nQ2zwCI0D5a7dXjmw
-```  
 ## Prerequisites
 
 For building and running the application you need:
@@ -208,19 +164,9 @@ To deploy this project run
 
 You cand use demo version of the app, using SwaggerUI and following this link:
 
---
-
-First, obtain an access token by running the /authenticate endpoint with username "user" and password "pass", which will grant you admin rights in the application.
-
-![App Screenshot](https://i.imgur.com/GX34Sdn.png)
-
-After that, authorize yourself by clicking the authorize button and copy-pasteing the token from the response.
-
-![App Screenshot](https://i.imgur.com/arTX2Ke_d.webp?maxwidth=760&fidelity=grand)
-
-From now on, you can use all other available endpoints, as per swagger documentation.
-
-
+```bash
+https://whispering-hamlet-04296.herokuapp.com/swagger-ui/
+```
 
 ## Badges
 
